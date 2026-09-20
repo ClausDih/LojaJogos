@@ -10,6 +10,9 @@ function App() {
   const [estoque, setEstoque] = useState('')
 
 
+/*enchi de comentários para eu estudar para a prova, JP*/
+
+
   useEffect(() => {
     api.get('/jogos')  /*aqui eu to fazendo a requisição com GET (servidor, me dê os jogos que estão lá no localhost 8080)*/
     .then((resposta) => { /*qdo a requisição der certo, faça isso, ou seja, me traga os dados q o servidor deu pro react, que são meus jogos cadastraods*/
