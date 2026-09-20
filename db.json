@@ -1,40 +1,40 @@
 {
-    "jogos": [
-        {
-            "id": 1,
-            "titulo": "Hollow Knight",
-            "genero": "Indie",
-            "preco": 39.9,
-            "estoque": 5
-        },
-        {
-            "id": 2,
-            "titulo": "Elden Ring",
-            "genero": "RPG",
-            "preco": 249.9,
-            "estoque": 0
-        },
-        {
-            "id": 3,
-            "titulo": "Stardew Valley",
-            "genero": "Indie",
-            "preco": 29.9,
-            "estoque": 12
-        },
-        {
-            "id": 4,
-            "titulo": "God of War Ragnarök",
-            "genero": "Ação",
-            "preco": 299.9,
-            "estoque": 3
-        }
-    ]
+  "jogos": [
+    {
+      "id": "1",
+      "titulo": "Hollow Knight",
+      "genero": "Indie",
+      "preco": 39.9,
+      "estoque": 5
+    },
+    {
+      "id": "2",
+      "titulo": "Elden Ring",
+      "genero": "RPG",
+      "preco": 249.9,
+      "estoque": 0
+    },
+    {
+      "id": "3",
+      "titulo": "Stardew Valley",
+      "genero": "Indie",
+      "preco": 29.9,
+      "estoque": 12
+    },
+    {
+      "id": "4",
+      "titulo": "God of War Ragnarök",
+      "genero": "Ação",
+      "preco": 299.9,
+      "estoque": 3
+    },
+    {
+      "titulo": "Minecraft",
+      "genero": "Sandbox",
+      "preco": 99.9,
+      "estoque": 10,
+      "id": "tnhwRj5Ep78"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
-
-
-
-
-
-
-
-

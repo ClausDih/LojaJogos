@@ -4,6 +4,11 @@ import api from "./services/api";
 function App() {
   const [jogos, setJogos] = useState([])
   const [erro, setErro] = useState('')
+  const [titulo, setTitulo] = useState('')
+  const [genero, setGenero] = useState('')
+  const [preco, setPreco] = useState('')
+  const [estoque, setEstoque] = useState('')
+
 
   useEffect(() => {
     api.get('/jogos')  /*aqui eu to fazendo a requisição com GET (servidor, me dê os jogos que estão lá no localhost 8080)*/
@@ -15,9 +20,67 @@ function App() {
     })
   }, [])   /*me mostre a lista quando o useEffect for montado*/
 
+
+
+function cadastrarJogo(evento) {
+  evento.preventDefault()
+
+  const novoJogo = {
+    titulo: titulo,
+    genero: genero,
+    preco: Number(preco),
+    estoque: Number(estoque)
+  }
+
+  api.post('/jogos', novoJogo)
+  .then(() => {
+    return api.get('/jogos')
+  })
+  .then((resposta) => {
+    setJogos(resposta.data)
+
+    setTitulo('')
+    setGenero('')
+    setPreco('')
+    setEstoque('')
+  })
+}
+
+
+
   return (  /*esse meu return é tudo que eu vou ver na minha página se não der erro quando a requisição acontecer*/
     <>
     <h1>Loja de jogos</h1>
+
+    <h2>Cadastrar jogo</h2>
+
+    <form onSubmit={cadastrarJogo}>
+      <label>Título:
+        <input type="text"
+        value={titulo}
+        onChange={(evento) => setTitulo(evento.target.value)}/>  
+      </label>
+
+      <label>Gênero:
+        <input type="text"
+        value={genero}
+        onChange={(evento) => setGenero(evento.target.value)}/>
+      </label>
+
+      <label>Preço:
+        <input type="number" 
+        value={preco}
+        onChange={(evento) => setPreco(evento.target.value)}/>
+      </label>
+
+      <label>Estoque:
+        <input type="number" 
+        value={estoque}
+        onChange={(evento) => setEstoque(evento.target.value)}/>
+      </label>
+
+      <button type="submit">Cadastrar</button>
+    </form>
 
     {erro ? (
       <p>{erro}</p>
